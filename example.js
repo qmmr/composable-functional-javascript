@@ -24,10 +24,20 @@ const moneyToFloat = str =>
     .map(s => s.replace(/\$/g, ''))
     .map(r => parseFloat(r));
 
+// const percentToFloat = str =>
+//   const replaced = str.replace(/\$/g, '')
+//   const number = parseFloat(replaced)
+//   return number * 0.01
+
 const percentToFloat = str =>
   Box(str.replace(/\%/g, ''))
     .map(replaced => parseFloat(replaced))
     .map(number => number * 0.01);
+
+// const applyDiscount = (price, discount) =>
+//   const cost = moneyToFloat(price)
+//   const savings = percentToFloat(discount)
+//   return cons - cost * savings
 
 const applyDiscount = (price, discount) =>
   moneyToFloat(price).fold(cost =>
